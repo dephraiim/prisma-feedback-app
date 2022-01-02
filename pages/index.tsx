@@ -12,6 +12,14 @@ export default function Home() {
   } = useForm();
 
   const create = async (data) => {
+    fetch("http://localhost:3000/api/create", {
+      body: JSON.stringify(data),
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
     console.log(data);
   };
 
