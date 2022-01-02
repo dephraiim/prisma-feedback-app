@@ -60,7 +60,7 @@ export default function FeedbackPage({ feedback }) {
                     </thead>
                     <tbody className="bg-gray-700 divide-y divide-gray-500">
                       {feedback.map((item) => (
-                        <tr key={item.id}>
+                        <tr key={item.id} onClick={() => console.log(item.id)}>
                           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-white">
                             {item.name}
                           </td>
@@ -102,6 +102,7 @@ export const getServerSideProps = async () => {
       message: true,
       feedbackType: true,
       name: true,
+      id: true,
     },
   });
 
