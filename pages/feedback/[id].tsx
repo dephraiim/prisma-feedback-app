@@ -1,5 +1,5 @@
-import React from 'react';
-import Link from 'next/link';
+import React from "react";
+import Link from "next/link";
 
 const SingleFeedback = ({ feedbackItem }) => {
   return (
@@ -25,9 +25,9 @@ export const getServerSideProps = async (context) => {
       feedbackItem: {
         id: 1,
         message: "Hey there I'm a demo message",
-        feedbackType: 'ISSUE',
-        email: 'mahmoud@prisma.io',
-        name: 'Mahmoud',
+        feedbackType: "ISSUE",
+        email: "mahmoud@prisma.io",
+        name: "Mahmoud",
       },
     },
   };

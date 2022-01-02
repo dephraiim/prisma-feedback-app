@@ -1,8 +1,8 @@
-import Head from 'next/head';
-import { useForm } from 'react-hook-form';
-import { motion } from 'framer-motion';
-import { ExclamationCircleIcon } from '@heroicons/react/solid';
-import toast, { Toaster } from 'react-hot-toast';
+import Head from "next/head";
+import { useForm } from "react-hook-form";
+import { motion } from "framer-motion";
+import { ExclamationCircleIcon } from "@heroicons/react/solid";
+import toast, { Toaster } from "react-hot-toast";
 
 export default function Home() {
   const {
@@ -11,15 +11,17 @@ export default function Home() {
     formState: { errors, isSubmitted },
   } = useForm();
 
-  const create = async (data) => {};
+  const create = async (data) => {
+    console.log(data);
+  };
 
   const onSubmit = async (data) => {
     toast.promise(
       create(data),
       {
-        loading: 'Working on it...',
-        success: 'Feedback submitted successfully!',
-        error: 'Oops! something went wrong.',
+        loading: "Working on it...",
+        success: "Feedback submitted successfully!",
+        error: "Oops! something went wrong.",
       },
       {
         duration: 3000,
@@ -51,15 +53,15 @@ export default function Home() {
               </label>
               <div className="relative">
                 <input
-                  {...register('name', { required: true })}
+                  {...register("name", { required: true })}
                   type="text"
                   name="name"
                   id="name"
                   autoComplete="name"
                   className={`block w-full shadow-sm py-3 text-white px-4 mb-2 bg-gray-700 placeholder-gray-500  border-gray-500 rounded-md ${
                     errors.name
-                      ? 'focus:ring-red-500 border-red-500'
-                      : 'focus:ring-blue-500 focus:border-blue-500'
+                      ? "focus:ring-red-500 border-red-500"
+                      : "focus:ring-blue-500 focus:border-blue-500"
                   }`}
                   placeholder="Full name"
                 />
@@ -81,13 +83,13 @@ export default function Home() {
               <input
                 id="email"
                 name="email"
-                {...register('email', { required: true })}
+                {...register("email", { required: true })}
                 type="email"
                 autoComplete="email"
                 className={`block w-full shadow-sm py-3 text-white px-4 mb-2 bg-gray-700 placeholder-gray-500   border-gray-500 rounded-md ${
                   errors.name
-                    ? 'focus:ring-red-500 border-red-500'
-                    : 'focus:ring-blue-500 focus:border-blue-500'
+                    ? "focus:ring-red-500 border-red-500"
+                    : "focus:ring-blue-500 focus:border-blue-500"
                 }`}
                 placeholder="Email"
               />
@@ -109,7 +111,7 @@ export default function Home() {
                 name="feedbackType"
                 className="mt-1 block w-full pl-3 pr-10 py-2 text-base bg-gray-700 placeholder-gray-500 text-white focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md"
                 defaultValue="FEEDBACK"
-                {...register('feedbackType', { required: true })}
+                {...register("feedbackType", { required: true })}
               >
                 <option>FEEDBACK</option>
                 <option>ISSUE</option>
@@ -123,15 +125,15 @@ export default function Home() {
               <textarea
                 id="message"
                 name="message"
-                {...register('message', { required: true })}
+                {...register("message", { required: true })}
                 rows={4}
                 className={`block w-full shadow-sm py-3 text-white px-4 mb-2 bg-gray-700 placeholder-gray-500   border-gray-500 rounded-md ${
                   errors.name
-                    ? 'focus:ring-red-500 border-red-500'
-                    : 'focus:ring-blue-500 focus:border-blue-500'
+                    ? "focus:ring-red-500 border-red-500"
+                    : "focus:ring-blue-500 focus:border-blue-500"
                 }`}
                 placeholder="Message"
-                defaultValue={''}
+                defaultValue=""
               />
             </div>
             <div>
